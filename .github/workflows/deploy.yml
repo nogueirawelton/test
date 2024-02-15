@@ -1,0 +1,19 @@
+name: 🚀 Deploy website on push
+
+on: push
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: vendas.calper.com.br
+          username: painel@vendas.calper.com.br
+          password: ${{ secrets.FTPPASSWORD }}
+          server-dir: ./test
