@@ -16,4 +16,4 @@ jobs:
           server: vendas.calper.com.br
           username: painel@vendas.calper.com.br
           password: ${{ secrets.FTPPASSWORD }}
-          server-dir: ./test
+          server-dir: test/
