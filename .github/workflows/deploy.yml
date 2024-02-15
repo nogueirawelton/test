@@ -28,7 +28,6 @@ jobs:
           password: ${{ secrets.FTPPASSWORD }}
           server-dir: test/
           exclude: |
-          **/.git*
           **/.git*/**
           **/node_modules/**
           **/src/**
