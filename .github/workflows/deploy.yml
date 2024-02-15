@@ -10,6 +10,16 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: 🔨 Build Project
+        run: |
+          npm install
+          npm run build
+
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -17,3 +27,8 @@ jobs:
           username: painel@vendas.calper.com.br
           password: ${{ secrets.FTPPASSWORD }}
           server-dir: test/
+          exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/src/**

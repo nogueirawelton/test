@@ -1,0 +1,9 @@
+// ----------------- SITE ----------------- //
+
+@use "./modules/vars";
+@use "./modules/reset";
+
+body {
+  background: var(--black);
+  color: var(--white);
+}
