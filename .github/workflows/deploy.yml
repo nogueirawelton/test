@@ -32,3 +32,5 @@ jobs:
             **/.git*/**
             **/node_modules/**
             **/src/**
+            **/package*
+            **/*.config.js*
