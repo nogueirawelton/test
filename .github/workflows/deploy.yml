@@ -13,8 +13,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      
+          node-version: "20"
+
       - name: 🔨 Build Project
         run: |
           npm install
@@ -28,6 +28,7 @@ jobs:
           password: ${{ secrets.FTPPASSWORD }}
           server-dir: test/
           exclude: |
-          **/.git*/**
-          **/node_modules/**
-          **/src/**
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/src/**
